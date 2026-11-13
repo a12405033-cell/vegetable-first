@@ -454,3 +454,166 @@ body {
   .photo.photo:hover img { scale: 1; }
   .grid-3 > .pop, .grid-2 > .pop, .row > .pop, .pair > .pop, .goods-pair > .pop, .project-photos > .pop { transform: none; }
 }
+
+/* =========================================================
+   ページ分けの版：大きなボタン（シンプル）
+   ========================================================= */
+.menu-section { padding-top: 40px; }
+.menu-kicker { margin: 0 0 14px; font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: var(--muted); }
+.menu-kicker--sub { margin-top: 56px; }
+
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.tile {
+  --tc: var(--c-orange);
+  position: relative; display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 200px; padding: 26px 28px;
+  text-decoration: none; color: var(--brown);
+  background: #fff; border: 2px solid var(--line); border-radius: 20px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.tile--orange { --tc: var(--c-orange); }
+.tile--green  { --tc: var(--c-green); }
+.tile--red    { --tc: var(--c-red); }
+.tile--yellow { --tc: #e6b800; }
+.tile:hover { border-color: var(--tc); }
+.tile__head { display: flex; align-items: baseline; gap: 12px; }
+.tile__num { font-size: 14px; font-weight: 700; color: var(--tc); }
+.tile__en { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; color: var(--muted); }
+.tile__ja { margin-top: 28px; font-size: 26px; font-weight: 700; line-height: 1.35; padding-right: 50px; }
+.tile__lead { margin-top: 8px; font-size: 14px; color: var(--muted); padding-right: 50px; }
+.tile__arrow {
+  position: absolute; right: 24px; bottom: 26px; width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center; border: 2px solid var(--line); color: var(--brown); font-size: 17px;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.tile:hover .tile__arrow { background: var(--tc); border-color: var(--tc); color: #fff; transform: translateX(4px); }
+
+/* 下層ページの「次へ」 */
+.tile--next { min-height: 0; padding: 30px 32px; }
+.tile--next .tile__ja { margin-top: 14px; font-size: 30px; }
+.tiles--mini { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.tile--mini { min-height: 0; padding: 18px 20px; }
+.tile--mini .tile__ja { margin-top: 10px; font-size: 17px; padding-right: 36px; }
+.tile--mini .tile__lead { display: none; }
+.tile--mini .tile__arrow { width: 30px; height: 30px; font-size: 13px; right: 16px; bottom: 18px; }
+.back-top { margin: 44px 0 0; text-align: center; }
+.page-next { padding-bottom: 40px; }
+
+@media (max-width: 960px) {
+  .tiles { grid-template-columns: 1fr 1fr; }
+  .tiles--mini { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .tiles { grid-template-columns: 1fr; gap: 12px; }
+  .tile { min-height: 0; padding: 20px 22px; }
+  .tile__ja { margin-top: 14px; font-size: 21px; }
+  .tile__lead { font-size: 13px; }
+  .tile__arrow { right: 18px; bottom: 50%; translate: 0 50%; }
+  .tile--next .tile__ja { font-size: 22px; }
+  .tiles--mini { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tile--mini { padding: 14px 14px; }
+  .tile--mini .tile__ja { font-size: 13px; padding-right: 30px; }
+  .tile--mini .tile__en { display: none; }
+  .tile--mini .tile__arrow { width: 26px; height: 26px; font-size: 12px; right: 10px; bottom: 14px; translate: none; }
+}
+
+/* ボタンの写真 */
+.tile { justify-content: flex-start; padding: 14px 14px 24px; }
+.tile__pic { display: block; aspect-ratio: 16 / 10; margin-bottom: 18px; overflow: hidden; border-radius: 12px; background: #eee8dc; }
+.tile__pic img { width: 100%; height: 100%; object-fit: cover; transition: scale 0.4s ease; }
+.tile:hover .tile__pic img { scale: 1.04; }
+.tile__pic--sns { display: grid; place-items: center; background: #f6efe2; }
+.tile__pic--sns img { width: 30%; height: auto; object-fit: contain; }
+.tile__head, .tile__ja, .tile__lead { margin-left: 14px; margin-right: 14px; }
+.tile__ja { margin-top: 10px; }
+.tile__arrow { right: 24px; bottom: 24px; }
+.tile--next { display: grid; grid-template-columns: 44% 1fr; grid-template-rows: auto auto 1fr; column-gap: 28px; padding: 14px; align-items: start; }
+.tile--next .tile__pic { grid-row: 1 / 4; margin: 0; aspect-ratio: 16 / 9; }
+.tile--next .tile__head { margin-top: 26px; }
+.tile--mini { padding: 10px 10px 16px; }
+.tile--mini .tile__pic { margin-bottom: 12px; border-radius: 10px; }
+.tile--mini .tile__head, .tile--mini .tile__ja { margin-left: 8px; margin-right: 8px; }
+.tile--mini .tile__ja { margin-top: 6px; }
+.tile--mini .tile__arrow { bottom: 14px; }
+@media (max-width: 640px) {
+  .tile { padding: 12px 12px 20px; }
+  .tile__head, .tile__ja, .tile__lead { margin-left: 10px; margin-right: 10px; }
+  .tile__arrow { bottom: 20px; right: 18px; translate: none; }
+  .tile--next { display: flex; }
+  .tile--next .tile__pic { margin-bottom: 16px; aspect-ratio: 16 / 10; }
+  .tile--next .tile__head { margin-top: 0; }
+  .tile--mini { padding: 8px 8px 12px; }
+  .tile--mini .tile__pic { margin-bottom: 8px; }
+  .tile--mini .tile__head, .tile--mini .tile__ja { margin-left: 6px; margin-right: 6px; }
+  .tile--mini .tile__arrow { bottom: 12px; right: 10px; }
+}
+.tile__pic--sns { background: #fff; border: 2px solid var(--line); }
+
+/* トップのボタンは縦一列（左に写真、右に文字） */
+.tiles:not(.tiles--mini) { grid-template-columns: 1fr; gap: 20px; max-width: 1000px; margin: 0 auto; }
+.tiles:not(.tiles--mini) > .tile {
+  display: grid; grid-template-columns: 38% 1fr; grid-template-rows: auto auto 1fr; column-gap: 32px;
+  padding: 14px; align-items: start;
+}
+.tiles:not(.tiles--mini) > .tile .tile__pic { grid-row: 1 / 4; margin: 0; aspect-ratio: 16 / 10; }
+.tiles:not(.tiles--mini) > .tile .tile__head { margin-top: 22px; }
+.tiles:not(.tiles--mini) > .tile .tile__ja { font-size: 28px; }
+.tiles:not(.tiles--mini) > .tile .tile__arrow { bottom: 50%; translate: 0 50%; right: 28px; width: 46px; height: 46px; }
+.tiles:not(.tiles--mini) > .tile .tile__ja, .tiles:not(.tiles--mini) > .tile .tile__lead { padding-right: 70px; }
+.menu-section .menu-kicker { max-width: 1000px; margin-left: auto; margin-right: auto; }
+@media (max-width: 640px) {
+  .tiles:not(.tiles--mini) > .tile { grid-template-columns: 40% 1fr; column-gap: 14px; padding: 10px; }
+  .tiles:not(.tiles--mini) > .tile .tile__pic { aspect-ratio: 1 / 1; border-radius: 10px; }
+  .tiles:not(.tiles--mini) > .tile .tile__head { margin: 8px 0 0; }
+  .tiles:not(.tiles--mini) > .tile .tile__en { display: none; }
+  .tiles:not(.tiles--mini) > .tile .tile__ja { margin: 4px 0 0; font-size: 18px; padding-right: 36px; }
+  .tiles:not(.tiles--mini) > .tile .tile__lead { margin: 4px 0 0; font-size: 12px; line-height: 1.5; padding-right: 36px; }
+  .tiles:not(.tiles--mini) > .tile .tile__arrow { right: 12px; width: 32px; height: 32px; font-size: 13px; }
+}
+.tiles:not(.tiles--mini) > .tile { grid-template-rows: 1fr auto auto auto 1fr; }
+.tiles:not(.tiles--mini) > .tile .tile__pic { grid-row: 1 / 6; }
+.tiles:not(.tiles--mini) > .tile .tile__head { grid-row: 2; margin-top: 0; }
+.tiles:not(.tiles--mini) > .tile .tile__ja { grid-row: 3; }
+.tiles:not(.tiles--mini) > .tile .tile__lead { grid-row: 4; }
+@media (max-width: 640px) { .tiles:not(.tiles--mini) { gap: 12px; } .tiles:not(.tiles--mini) > .tile .tile__head { margin-top: 0; } }
+
+/* トップのボタン：写真を大きく */
+.tiles:not(.tiles--mini) { max-width: 1120px; }
+.menu-section .menu-kicker { max-width: 1120px; }
+.tiles:not(.tiles--mini) > .tile { grid-template-columns: 58% 1fr; column-gap: 40px; }
+.tiles:not(.tiles--mini) > .tile .tile__pic { aspect-ratio: 16 / 10; }
+.tiles:not(.tiles--mini) > .tile .tile__ja { font-size: 30px; }
+.tiles:not(.tiles--mini) > .tile .tile__lead { font-size: 15px; }
+@media (max-width: 960px) {
+  .tiles:not(.tiles--mini) > .tile { grid-template-columns: 50% 1fr; column-gap: 24px; }
+  .tiles:not(.tiles--mini) > .tile .tile__ja { font-size: 24px; }
+}
+@media (max-width: 640px) {
+  .tiles:not(.tiles--mini) { gap: 16px; }
+  .tiles:not(.tiles--mini) > .tile { display: flex; flex-direction: column; padding: 10px 10px 18px; }
+  .tiles:not(.tiles--mini) > .tile .tile__pic { width: 100%; aspect-ratio: 16 / 10; margin-bottom: 14px; border-radius: 12px; }
+  .tiles:not(.tiles--mini) > .tile .tile__head { margin: 0 8px; }
+  .tiles:not(.tiles--mini) > .tile .tile__en { display: inline; }
+  .tiles:not(.tiles--mini) > .tile .tile__ja { margin: 6px 8px 0; font-size: 21px; padding-right: 50px; }
+  .tiles:not(.tiles--mini) > .tile .tile__lead { margin: 4px 8px 0; font-size: 13px; padding-right: 50px; }
+  .tiles:not(.tiles--mini) > .tile .tile__arrow { top: auto; bottom: 22px; right: 18px; translate: none; width: 38px; height: 38px; font-size: 15px; }
+}
+
+/* トップのボタン：写真の下に文字（白い部分を減らす） */
+.tiles:not(.tiles--mini) > .tile { display: flex; flex-direction: column; padding: 12px 12px 22px; }
+.tiles:not(.tiles--mini) > .tile .tile__pic { width: 100%; aspect-ratio: 2 / 1; margin: 0 0 18px; border-radius: 12px; }
+.tiles:not(.tiles--mini) > .tile .tile__head { margin: 0 14px; }
+.tiles:not(.tiles--mini) > .tile .tile__ja { margin: 6px 14px 0; font-size: 28px; padding-right: 70px; }
+.tiles:not(.tiles--mini) > .tile .tile__lead { margin: 4px 14px 0; font-size: 15px; padding-right: 70px; }
+.tiles:not(.tiles--mini) > .tile .tile__arrow { top: auto; bottom: 26px; right: 24px; translate: none; width: 46px; height: 46px; }
+@media (max-width: 640px) {
+  .tiles:not(.tiles--mini) > .tile { padding: 10px 10px 18px; }
+  .tiles:not(.tiles--mini) > .tile .tile__pic { aspect-ratio: 16 / 10; margin-bottom: 14px; }
+  .tiles:not(.tiles--mini) > .tile .tile__head { margin: 0 8px; }
+  .tiles:not(.tiles--mini) > .tile .tile__ja { margin: 6px 8px 0; font-size: 21px; padding-right: 50px; }
+  .tiles:not(.tiles--mini) > .tile .tile__lead { margin: 4px 8px 0; font-size: 13px; padding-right: 50px; }
+  .tiles:not(.tiles--mini) > .tile .tile__arrow { bottom: 22px; right: 18px; width: 38px; height: 38px; }
+}
+.tiles:not(.tiles--mini), .menu-section .menu-kicker { max-width: 900px; } .tiles:not(.tiles--mini) > .tile .tile__pic { aspect-ratio: 16 / 9; }
+.page-num, .tile__num { transform: none; }
+.menu-button { background: var(--yellow) !important; border-color: var(--yellow) !important; color: var(--brown); font-weight: 700; }
