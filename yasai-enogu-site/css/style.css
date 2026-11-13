@@ -444,3 +444,13 @@ body {
   .site-footer { margin-top: 100px; }
   .site-footer .team { font-size: 20px; }
 }
+
+/* スマホ：写真の列は横スクロールだけ（縦にずれない） */
+@media (max-width: 640px) {
+  .grid-3, .grid-3.tight, .grid-2, .row, .pair, .goods-pair, .project-photos {
+    overflow-y: hidden; overscroll-behavior-x: contain; touch-action: pan-x pan-y;
+    align-items: flex-start;
+  }
+  .photo.photo:hover img { scale: 1; }
+  .grid-3 > .pop, .grid-2 > .pop, .row > .pop, .pair > .pop, .goods-pair > .pop, .project-photos > .pop { transform: none; }
+}
