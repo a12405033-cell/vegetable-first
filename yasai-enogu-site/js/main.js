@@ -110,3 +110,23 @@
     io.observe(el);
   });
 })();
+
+// スマホ：横にスワイプできる写真の列に「スワイプ →」の案内を付ける
+(function () {
+  var mq = window.matchMedia("(max-width: 640px)");
+  var sel = ".grid-3, .grid-2, .row, .pair, .goods-pair, .project-photos";
+  function apply() {
+    document.querySelectorAll(sel).forEach(function (row) {
+      var next = row.nextElementSibling;
+      var has = next && next.classList.contains("swipe-hint");
+      var need = mq.matches && row.scrollWidth > row.clientWidth + 4;
+      if (need && !has) {
+        var p = document.createElement("p");
+        p.className = "swipe-hint"; p.textContent = "スワイプで次の写真へ →";
+        row.parentNode.insertBefore(p, row.nextSibling);
+      } else if (!need && has) next.remove();
+    });
+  }
+  window.addEventListener("load", apply);
+  window.addEventListener("resize", apply);
+})();
