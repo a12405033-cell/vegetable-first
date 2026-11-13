@@ -130,3 +130,15 @@
   window.addEventListener("load", apply);
   window.addEventListener("resize", apply);
 })();
+
+// 大きなボタン：カーソルを当てると、のぞいている野菜の顔が変わる
+(function () {
+  document.querySelectorAll(".tile").forEach(function (tile) {
+    var veg = tile.querySelector(".tile__veg");
+    if (!veg || !veg.dataset.hover) return;
+    var idle = veg.getAttribute("src"), hover = veg.dataset.hover;
+    new Image().src = hover;
+    tile.addEventListener("pointerenter", function () { veg.src = hover; });
+    tile.addEventListener("pointerleave", function () { veg.src = idle; });
+  });
+})();
