@@ -42,11 +42,17 @@ window.ACTIVITIES = [
     title: "農家さん訪問",
     date: "2026.7.9・7.25・10.11",
     label: "野菜の提供でお世話になっている農家さんのもとへ",
-    text: "野菜絵の具づくりに使う野菜について相談するため、農家さんを訪問しました。",
+    text: "野菜絵の具づくりでお世話になっている[[大久保ファーム]]さんを訪問しました。\n畑のお手伝いをしたり、農家さんたちと一緒にお昼ごはんやスイカをいただいたりしながら、野菜のことを教えていただきました。",
     photos: [
       { src: "images/f-stand.webp", alt: "大久保ファームの直売所（7/9）", tall: true },
       { src: "images/f-tomato.webp", alt: "畑で実ったトマト（7/9）", tall: true },
       { src: "images/f-corn.webp", alt: "畑のとうもろこし（7/9）", tall: true },
+      { src: "images/farm-0725-field.webp", alt: "ピーマン畑での収穫のお手伝い（7/25）" },
+      { src: "images/farm-0725-group.webp", alt: "竹林の前での集合写真（7/25）" },
+      { src: "images/farm-0725-watermelon.webp", alt: "作業のあとにみんなでスイカ（7/25）" },
+      { src: "images/farm-1011-truck.webp", alt: "軽トラックに乗って畑へ（10/11）" },
+      { src: "images/farm-1011-lunch1.webp", alt: "農家さんたちとのお昼ごはん（10/11）" },
+      { src: "images/farm-1011-lunch2.webp", alt: "畑の横でのお昼ごはん（10/11）" },
     ]
   },
   {
@@ -71,6 +77,9 @@ window.ACTIVITIES = [
     label: "夏休み特別企画　野菜えのぐを使って巾着絵付けワークショップ（かーやんアート教室・府中市）",
     text: "廃棄野菜を粉末にして作った[[野菜えのぐ]]で、世界に一つだけのオリジナル型染め巾着をつくるワークショップを、かーやんアート教室で開催しました。\nレモン汁や重曹で[[色が変わる]]様子も楽しんでもらいました。",
     photos: [
+      { src: "images/kaayan-ws2.webp", alt: "ワークショップの様子" },
+      { src: "images/kaayan-ws1.webp", alt: "野菜のスタンプで巾着に色をつける参加者" },
+      { src: "images/kaayan-works.webp", alt: "完成した巾着" },
     ]
   },
 ];
