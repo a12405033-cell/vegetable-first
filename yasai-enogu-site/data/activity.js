@@ -44,6 +44,9 @@ window.ACTIVITIES = [
     label: "野菜の提供でお世話になっている農家さんのもとへ",
     text: "野菜絵の具づくりに使う野菜について相談するため、農家さんを訪問しました。",
     photos: [
+      { src: "images/f-stand.webp", alt: "大久保ファームの直売所（7/9）", tall: true },
+      { src: "images/f-tomato.webp", alt: "畑で実ったトマト（7/9）", tall: true },
+      { src: "images/f-corn.webp", alt: "畑のとうもろこし（7/9）", tall: true },
     ]
   },
   {
