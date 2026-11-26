@@ -658,3 +658,7 @@ a.news__item:hover .news__arrow { background: var(--c-orange); border-color: var
 
 /* 写真が1枚だけの段は大きくしすぎない */
 .row > .photo:only-child { flex: 0 0 auto !important; width: min(380px, 70%); }
+
+/* SNS：XもInstagramと同じカードに */
+.sns { grid-template-columns: 1fr 1fr; max-width: 900px; }
+@media (max-width: 960px) { .sns { grid-template-columns: 1fr; } }
