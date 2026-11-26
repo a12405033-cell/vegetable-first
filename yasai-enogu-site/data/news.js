@@ -8,7 +8,7 @@
    ・link  : 押したときに開くページ（なければ "" のまま）
              サイト内なら "activity.html#halloween" のように書きます
              Xの投稿なら "https://x.com/vegetable_first/status/..." でもOK
-   ・トップには上から5件まで表示されます
+   ・トップには上から8件まで表示されます
    ========================================================= */
 window.NEWS = [
   {
@@ -30,9 +30,21 @@ window.NEWS = [
     link: "activity.html#csfes"
   },
   {
+    date: "2026.10.11",
+    tag: "活動報告",
+    title: "農家さんを訪問してきました！（7/9・7/25・10/11）",
+    link: "activity.html#farm"
+  },
+  {
     date: "2026.09.13",
     tag: "活動報告",
     title: "スワニューマーケットに出店し、型染めワークショップを行いました。",
     link: "activity.html#swanew"
+  },
+  {
+    date: "2026.08.12",
+    tag: "活動報告",
+    title: "かーやんアート教室（府中市）で、野菜えのぐを使った巾着絵付けワークショップを開催しました。",
+    link: "activity.html#kaayan"
   },
 ];
