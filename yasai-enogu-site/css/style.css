@@ -655,3 +655,6 @@ a.news__item:hover .news__arrow { background: var(--c-orange); border-color: var
   .news__title { flex-basis: 100%; font-size: 15px; }
   .menu-section { padding-top: 44px; }
 }
+
+/* 写真が1枚だけの段は大きくしすぎない */
+.row > .photo:only-child { flex: 0 0 auto !important; width: min(380px, 70%); }
